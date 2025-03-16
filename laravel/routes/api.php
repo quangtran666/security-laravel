@@ -11,5 +11,6 @@ Route::get('/user', function (Request $request) {
 
 Route::prefix('auth/spa')->group(function () {
    Route::post('login', [AuthController::class, 'login'])->middleware('guest');
+   Route::post('register', [AuthController::class, 'register'])->middleware('guest');
    Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 });

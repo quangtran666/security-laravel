@@ -5,7 +5,7 @@ import Input from "../../components/forms/Input.tsx";
 import CheckBox from "../../components/forms/CheckBox.tsx";
 import Button from "../../components/forms/Button.tsx";
 import {login} from "../../services/authService.ts";
-import {useNavigate} from "react-router";
+import {Link, useNavigate} from "react-router";
 
 function Login() {
     const {
@@ -41,12 +41,15 @@ function Login() {
                 register={register}
                 error={errors.password}
             />
-            <CheckBox
-                label="Remember me"
-                name="remember"
-                register={register}
-                error={errors.remember}
-            />
+            <div className="flex justify-between items-center">
+                <CheckBox
+                    label="Remember me"
+                    name="remember"
+                    register={register}
+                    error={errors.remember}
+                />
+                <Link className="text-blue-400" to={"/auth/register"}>Chưa có tài khoản? Đăng ký ở đây</Link>
+            </div>
             <Button
                 type="submit"
                 disabled={isSubmitting}
