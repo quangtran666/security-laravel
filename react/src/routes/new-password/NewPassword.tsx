@@ -26,7 +26,7 @@ function NewPassword() {
         await resetPassword(newPasswordRequest);
 
         setTimeout(() => {
-            navigate("/home");
+            navigate("/auth/login");
         }, 3000)
     }
 
