@@ -8,9 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-
-Route::prefix('auth/spa')->group(function () {
-   Route::post('login', [AuthController::class, 'login'])->middleware('guest');
-   Route::post('register', [AuthController::class, 'register'])->middleware('guest');
-   Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
-});
+require __DIR__.'/auth.php';

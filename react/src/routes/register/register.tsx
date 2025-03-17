@@ -19,7 +19,7 @@ function Register() {
 
     const onSubmit = async (values: RegisterRequestType) => {
         await registerUser(values);
-        navigate("/home");
+        navigate("/auth/email-verification");
     }
 
     return (
