@@ -9,6 +9,7 @@ import EmailVerificationPrompt from "./routes/email-verification-prompt/EmailVer
 import VerifyEmail from "./routes/verify-email/VerifyEmail.tsx";
 import PasswordResetLink from "./routes/password-reset-link/PasswordResetLink.tsx";
 import NewPassword from "./routes/new-password/NewPassword.tsx";
+import OAuth2Callback from "./routes/callback/OAuth2Callback.tsx";
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="verify-email" element={ <VerifyEmail /> } />
                 <Route path="password-reset" element={ <PasswordResetLink /> } />
                 <Route path="new-password" element={ <NewPassword /> } />
+                <Route path="oauth2/callback/:provider" element={ <OAuth2Callback /> } />
             </Route>
             <Route path="home" >
                 <Route index element={<Home />} />
