@@ -48,7 +48,11 @@ function Login() {
                     register={register}
                     error={errors.remember}
                 />
-                <Link className="text-blue-400" to={"/auth/register"}>Chưa có tài khoản? Đăng ký ở đây</Link>
+                <div className="flex justify-between items-center space-x-2">
+                    <Link className="text-blue-400" to={"/auth/password-reset"}>Quên mật khẩu</Link>
+                    <span className="text-blue-400">|</span>
+                    <Link className="text-blue-400" to={"/auth/register"}>Chưa có tài khoản? Đăng ký ở đây</Link>
+                </div>
             </div>
             <Button
                 type="submit"
