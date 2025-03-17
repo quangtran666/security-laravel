@@ -14,6 +14,8 @@ import OAuth2Callback from "./routes/callback/OAuth2Callback.tsx";
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
+        {/* Move the callback route out of MainLayout temporarily.  */}
+        <Route path="auth/oauth2/callback/:provider" element={ <OAuth2Callback /> } />
         <Route element={ <MainLayout /> }>
             <Route path="auth" >
                 <Route path="login" element={ <Login /> } />
@@ -22,7 +24,6 @@ createRoot(document.getElementById('root')!).render(
                 <Route path="verify-email" element={ <VerifyEmail /> } />
                 <Route path="password-reset" element={ <PasswordResetLink /> } />
                 <Route path="new-password" element={ <NewPassword /> } />
-                <Route path="oauth2/callback/:provider" element={ <OAuth2Callback /> } />
             </Route>
             <Route path="home" >
                 <Route index element={<Home />} />
